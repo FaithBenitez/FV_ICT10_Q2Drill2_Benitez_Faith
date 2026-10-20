@@ -1,22 +1,21 @@
 from pyscript import display, document
 
+
+members = {'Zara Llaguno', 'Jadrien Godino', 'Carlos David'}
+
 def add_member(e):
-    document.getElementById('output1').innerHTML= ""
-    
-    members={'Uniqlo', 'Bench', 'Zara'}
 
-    input_fname=document.getElementById('fname').value
-    input_lname=document.getElementById('lname').value
-    #assign the valute to set variable 
-    new_brand_set = {input_member}
+    document.getElementById('output1').innerHTML = ""
 
-    all_brands = brands | new_brand_set
+    input_fname = document.getElementById('fname').value.strip()
+    input_lname = document.getElementById('lname').value.strip()
 
-    total_brands = len(brands | new_brand_set)
+    new_student = {input_fname + " " + input_lname}
 
-    brand_list = "<br>".join(sorted(all_brands))
-    #display
-    document.getElementById('output1').innerHTML = f'All brands: <br> {brand_list}'
-    display(f'Total brands: {total_brands}', target="output1")
+    members = members | new_student
+    total_members = len(members)
 
-    new_student= input_lname+ "" +input_fname 
+    member_list = "<br>".join(sorted(members))
+
+    document.getElementById('output1').innerHTML = f'All members: <br> {member_list}'
+    display(f'Total members: {total_members}', target="output1")
